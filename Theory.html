@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Virtual Lab</title>
+    <link rel="stylesheet" href="./Theory_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Theory_files/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous">
+    <link href="./Theory_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Theory_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Theory_files/github-markdown.min(1).css">
+    <link rel="stylesheet" href="./Theory_files/style.min.css">
+    <link rel="stylesheet" href="./Theory_files/vlabs-style.css">
+
+    <style>
+      h1 {
+      font-size: 1.8rem;
+      }
+      h2 {
+      font-size: 1.4rem;
+      }
+      h3 {
+      font-size: 1.2rem;
+      }
+
+      h2, h3 {
+      font-weight: 800;
+      }
+    </style>
+  </head>
+  <body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between" style="background-color: rgb(48, 47, 47)";>
+      <!--Google Tag Manager (noscript)-->
+      <noscript class="gtm">
+        <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W59SWTR" style="display:none;visibility:hidden" width="0">
+        </iframe>
+      </noscript>
+      <!--End Google Tag Manager (noscript)-->
+
+      <header class="vlabs-header sticky-top bg-white"></header>
+      <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+        <div class="row d-flex justify-content-between">
+          <div class="flex-column">
+
+		    <div class="row py-4 px-6 breadcrumbs" style="color: white;">
+		    <b>St. Vincent Pallotti College of Engineering and Technology, Nagpur</b>
+
+		    </div>
+
+	  </div>
+          <div class="flex-column">
+            <div id="plugin-bug-report"></div>
+            <div id="plugin-rating"></div>
+          </div>
+        </div>
+        <div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+          <div class="modal fade popupmenu" id="popupMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+          </div>
+          <div class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex" id="menu">
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="Virtual Lab.html" class="p-2  current-item ">
+                        Aim
+                        </a>
+
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="Theory.html" class="p-2 ">
+                        Theory
+                        </a>
+
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="Procedure.html" class="p-2 ">
+                        Procedure
+                        </a>
+
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="index.html" class="p-2 ">
+                        Simulation
+                        </a>
+
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+          </div>
+          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+            <div class="text-center fix-spacing">
+              <h2>Caesar Cipher</h2>
+
+            </div>
+            <div style="color: white;">
+              <p> The Caesar Cipher technique is one of the earliest and simplest methods of encryption technique.
+                It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced by a letter with a fixed number of positions down the alphabet.
+                For example with a shift of 1, A would be replaced by B, B would become C, and so on.
+                The method is apparently named after Julius Caesar, who apparently used it to communicate with his officials.
+
+                Thus to cipher a given text we need an integer value, known as a shift which indicates the number of positions each letter of the text has been moved down.
+                The encryption can be represented using modular arithmetic by first transforming the letters into numbers, according to the scheme, A = 0, B = 1,…, Z = 25.
+                Encryption of a letter by a shift n can be described mathematically as: <br>
+              <center>E(x) = (x + n) mod 26</center>
+              <center>(Encryption Phase with shift n)</center><br><br>
+              <center>D(x) = (x - n) mod 26</center>
+              <center>(Decryption Phase with shift n)</center>
+              <br><br>
+              <b>Algorithm for Caesar Cipher: </b><br>
+              Input:
+              <ol>
+              <li>A String of lower case letters, called Text.</li>
+              <li>Integer between 0-25 denoting the required shift.</li>
+              </ol>
+              Procedure:
+              <ol>
+              <li>Traverse the given text one character at a time .</li>
+              <li>For each character, transform the given character as per the rule, depending on whether we’re encrypting or decrypting the text.</li>
+              <li>Return the new string generated.</li>
+           </ol></p>
+           <b>Conclusion:-</b> In this practical, a virtual lab was successfully created for demonstration of Caesar Cipher.
+          <p><b>Cryptanalysis</b> is the art of breaking codes and ciphers.
+            The Caesar cipher is probably the easiest of all ciphers to break.
+            Since the shift has to be a number between 1 and 25, (0 or 26 would result in an unchanged plaintext)
+            we can simply try each possibility and see which one results in a piece of readable text.
+            If you happen to know what a piece of the ciphertext is, or you can guess a piece,
+            then this will allow you to immediately find the key.If this is not possible, a more systematic approach is to calculate the frequency distribution of the letters in the cipher text. This consists of counting how many times each letter appears. Natural English text has a very distinct distribution that can be used help crack codes.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+      <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+        <div class="row px-5 mx-0">
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Group Members</span>
+            Janhavi Upadhaye  -  13 <br>
+            Dhawal Madankar   -  42
+          </div>
+          </div>
+        </div>
+      </footer>
+</body></html>

@@ -1,0 +1,52 @@
+body {
+    margin: 10;
+    background-image: url("k.jpg");
+}
+
+.header {
+    padding-top: 0%;
+    text-align: center;
+    background:#cccccc;
+    color: white;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+.conatiner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: right;
+    flex-direction: column;
+}
+
+.container h1 {
+    text-align: right;
+    color: white;
+    text-decoration-color: #cccccc;
+    width: 500px;
+    font-size: 20px;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: right;
+}
+
+#app-container textarea {
+    height: 80px;
+    width: 300px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#buttons-container {
+    margin-top: 15px;
+    text-align: right;
+    display: grid;
+    justify-content: right;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAESAR CIPHER</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+</style>
+</head>
+
+<body>
+  <div class="row">
+    <div class="column">
+      <div class="conatiner">
+
+          <h1 style="color:white; font-size: 50px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">CAESAR CIPHER</h1>
+          <h3 style="color:white; font-size: 20px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Enter a message</h3>
+          <div id="app-container">
+              <textarea name="" id="text"></textarea>
+              <div id="buttons-container">
+                  <button id="encrypt" style=" height: 30px; width: 100px; font-size: 18px; color:cadetblue;">Encrypt</button>
+                  <button id="decrypt" style="height: 30px; width: 100px;font-size: 18px; color: brown;">Decrypt</button>
+              </div>
+          </div>
+      </div>
+
+    </div>
+    <div class="column">
+      <div class="conatiner">
+          <h1 style="color:white; font-size: 50px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> MODIFIED CAESAR CIPHER</h1>
+          <h3 style="color:white; font-size: 20px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Enter a message</h3>
+          <div id="app-container">
+              <textarea name="" id="text2"></textarea>
+
+              <div id="buttons-container">
+                  <input id="key2" type="text" placeholder="Key" style="height: 25px; width: 100px; text-align: center; font-size: 16px;">
+                  <button id="encrypt2" style=" height: 30px; width: 100px; font-size: 18px; color:cadetblue;">Encrypt</button>
+                  <button id="decrypt2" style="height: 30px; width: 100px;font-size: 18px; color: brown;">Decrypt</button>
+              </div>
+          </div>
+
+      </div>
+    </div>
+    </div>
+
+
+    <script>
+
+            const btnEncrypt = document.querySelector('#encrypt');
+            const btnDecrypt = document.querySelector('#decrypt');
+            const key = 3;
+
+            const listLetters = ['a', 'b', 'c',	'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+                                 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+            let newText = '';
+
+            btnEncrypt.addEventListener('click', () => {
+                const textarea = document.querySelector('#text');
+                const keyValue = Number(key.value);
+                for (let letter of textarea.value) {
+                    letter = letter.toLowerCase();
+                    if(!listLetters.includes(letter)) {
+                        continue
+                    }
+
+                    const indexLetter = listLetters.findIndex((item) => item === letter);
+                    let indexNewLetter = indexLetter + 3;
+
+                    if(indexNewLetter > 25){
+                        indexNewLetter -= 26;
+                    }
+                    newText += listLetters[indexNewLetter];
+                    textarea.value=newText;
+                }
+                newText = '';
+            })
+
+            btnDecrypt.addEventListener('click', () => {
+                const textarea = document.querySelector('#text');
+                const keyValue = Number(key.value);
+
+                for(let letter of textarea.value){
+                    letter = letter.toLowerCase();
+
+                    if(!listLetters.includes(letter)){
+                        continue
+                    }
+                    const indexLetter = listLetters.findIndex((item) => item === letter);
+                    let indexNewLetter = indexLetter - 3;
+
+                    if(indexNewLetter < 0){
+                        indexNewLetter += 26;
+                    }
+                    newText += listLetters[indexNewLetter];
+                    textarea.value=newText;
+                }
+                newText = '';
+            })
+
+           <!-- MODIFIED CAESAR CIPHER -->
+            const btnEncrypt2 = document.querySelector('#encrypt2');
+            const btnDecrypt2 = document.querySelector('#decrypt2');
+            const key2 = document.querySelector('#key2');;
+
+            const listLetters2 = ['a', 'b', 'c',	'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+                                 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+            let newText2 = '';
+
+            btnEncrypt2.addEventListener('click', () => {
+                const textarea2 = document.querySelector('#text2');
+                const keyValue2 = Number(key2.value);
+                for (let letter2 of textarea2.value) {
+                    letter2 = letter2.toLowerCase();
+                    if(!listLetters2.includes(letter2)) {
+                        continue
+                    }
+
+                    const indexLetter2 = listLetters2.findIndex((item) => item === letter2);
+                    let indexNewLetter2 = indexLetter2 + keyValue2;
+
+                    if(indexNewLetter2 > 25){
+                        indexNewLetter2 -= 26;
+                    }
+                    newText2 += listLetters2[indexNewLetter2];
+                    textarea2.value=newText2;
+                }
+                newText2 = '';
+            })
+
+            btnDecrypt2.addEventListener('click', () => {
+                const textarea2 = document.querySelector('#text2');
+                const keyValue2 = Number(key2.value);
+
+                for(let letter2 of textarea2.value){
+                    letter2 = letter2.toLowerCase();
+
+                    if(!listLetters2.includes(letter2)){
+                        continue
+                    }
+                    const indexLetter2 = listLetters2.findIndex((item) => item === letter2);
+                    let indexNewLetter2 = indexLetter2 - keyValue2;
+
+                    if(indexNewLetter2 < 0){
+                        indexNewLetter2 += 26;
+                    }
+                    newText2 += listLetters2[indexNewLetter2];
+                    textarea2.value=newText2;
+                }
+                newText2 = '';
+            })
+    </script>
+</body>
+</html>
